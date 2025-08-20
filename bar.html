@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة البار - فندق زين دايف إن</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, #e6f2ff, #f0f8ff);
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.15);
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            margin: 20px 0;
+            border-top: 5px solid #0066cc;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 15px;
+        }
+        h1 {
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .menu-section {
+            margin-bottom: 30px;
+        }
+        .menu-section h2 {
+            color: #0066cc;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: x-large;
+            border-bottom: 1px dotted #ddd;
+        }
+        .item-name {
+            font-weight: bold;
+        }
+        .item-price {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
+        }
+        .btn:hover {
+            background-color: #004c99;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 102, 204, 0.4);
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation no-print">
+        <a href="index.html" class="btn">الرئيسية</a>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>قائمة البار</h1>
+            <h2>فندق زين دايف إن</h2>
+        </div>
+
+        <div class="menu-section">
+            <h2>المشروبات</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">ريدبول</span>
+                    <span class="item-price">70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">فانتا</span>
+                    <span class="item-price">30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">بيريل</span>
+                    <span class="item-price">30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">سفن اب</span>
+                    <span class="item-price">30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">اسبريت</span>
+                    <span class="item-price">30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">مياه ص</span>
+                    <span class="item-price">10</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">مياه ك</span>
+                    <span class="item-price">20</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>العصائر</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">عصير برتقال</span>
+                    <span class="item-price">60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">عصير مانجا</span>
+                    <span class="item-price">65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">عصير فراوله</span>
+                    <span class="item-price">65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">عصير بطيخ</span>
+                    <span class="item-price">65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">عصير ليمون</span>
+                    <span class="item-price">60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">عصير ليمون نعناع</span>
+                    <span class="item-price">65</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>مشروبات مميزة</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">ميلك شيك</span>
+                    <span class="item-price">90</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">موخيتو</span>
+                    <span class="item-price">70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">موخيتو ريدبول</span>
+                    <span class="item-price">90</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>سموزي</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">سموزي مانجا</span>
+                    <span class="item-price">65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">سموزي فراوله</span>
+                    <span class="item-price">65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">سموزي بطيخ</span>
+                    <span class="item-price">65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">سموزي ليمون</span>
+                    <span class="item-price">60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">سموزي ليمون نعناع</span>
+                    <span class="item-price">65</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>المشروبات الساخنة</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">شاي</span>
+                    <span class="item-price">25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">شاي اخضر</span>
+                    <span class="item-price">25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">ينسون</span>
+                    <span class="item-price">25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">نعناع</span>
+                    <span class="item-price">25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">كركدي</span>
+                    <span class="item-price">25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">نسكافيه بلاك</span>
+                    <span class="item-price">40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">نسكافيه حليب</span>
+                    <span class="item-price">70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">كابتشينو</span>
+                    <span class="item-price">70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">لاتيه</span>
+                    <span class="item-price">70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">قهوه</span>
+                    <span class="item-price">40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">قهوه دبل</span>
+                    <span class="item-price">60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">قهوه فرنساوي</span>
+                    <span class="item-price">65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">اسبرسو سنجل</span>
+                    <span class="item-price">45</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">اسبرسو دبل</span>
+                    <span class="item-price">65</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>مشروبات مثلجة</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">ايس لاتيه</span>
+                    <span class="item-price">70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">ايس موكه</span>
+                    <span class="item-price">80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">ايس اسبانش لاتيه</span>
+                    <span class="item-price">80</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>سناكس</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">شيبسي</span>
+                    <span class="item-price">15</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">مولتو</span>
+                    <span class="item-price">20</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>سجائر</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span class="item-name">كيلوبترا</span>
+                    <span class="item-price">55</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">ميريت</span>
+                    <span class="item-price">130</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">مارلبورو احمر</span>
+                    <span class="item-price">120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">مارلبورو جولد</span>
+                    <span class="item-price">120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">LM احمر</span>
+                    <span class="item-price">100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">LM ازرق</span>
+                    <span class="item-price">100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

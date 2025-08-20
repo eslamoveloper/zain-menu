@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة المطعم - فندق زين دايف إن</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, #e6f2ff, #f0f8ff);
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.15);
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            margin: 20px 0;
+            border-top: 5px solid #0066cc;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 15px;
+        }
+        h1 {
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .menu-section {
+            margin-bottom: 30px;
+        }
+        .menu-section h2 {
+            color: #0066cc;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .menu-item {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-size: x-large;
+        }
+        .pizza-section {
+            margin: 20px 0;
+        }
+        .pizza-title {
+            color: #0066cc;
+            font-size: xx-large;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .pizza-sizes {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+        .pizza-size {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 8px;
+            width: 90px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 102, 204, 0.1);
+            transition: all 0.3s ease;
+        }
+        .pizza-size:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 8px rgba(0, 102, 204, 0.2);
+        }
+        .size-name {
+            font-weight: bold;
+            color: #0066cc;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            padding-bottom: 3px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .size-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #333;
+        }
+        .size-desc {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        @media print {
+            .pizza-section {
+                margin: 10px 0;
+                page-break-inside: avoid;
+            }
+            .pizza-sizes {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+            .pizza-size {
+                width: 18%;
+                padding: 5px;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
+        }
+        .btn:hover {
+            background-color: #004c99;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 102, 204, 0.4);
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation no-print">
+        <a href="index.html" class="btn">الرئيسية</a>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>قائمة المطعم</h1>
+            <h2>فندق زين دايف إن</h2>
+        </div>
+
+        <div class="menu-section">
+            <h2>وجبات زين</h2>
+            <div class="menu-item">مكرونه وايت صوص بالمشروم + فريز + كانز ٢٢٠</div>
+            <div class="menu-item">ورك فرخه +ارز +سلطه +خضار +عيش+بيبسي       ١٥٠</div>
+            <div class="menu-item">صدر فرخه + ارز + سلطه + خضار + عيش + بيبسي       ١٦٠</div>
+            <div class="menu-item">نص فرخه + ارز + سلطه + خضار + عيش + بيبسي ٢٥٠</div>
+            <div class="menu-item">٦ صوابع كفته + ارز + سلطه + خضار + عيش + بيبسي ١٧٠</div>
+        </div>
+
+        <div class="menu-section">
+            <h2>سندوتشات</h2>
+            <div class="menu-item">استربس + بطاطس + بيبسي ١٠٠</div>
+            <div class="menu-item">فاهيتا + بطاطس + بيبسي ١٠٠</div>
+            <div class="menu-item">كفته + بطاطس + بيبسي ١٢٠</div>
+        </div>
+
+        <div class="menu-section">
+            <h2>حلويات</h2>
+            <div class="menu-item">٤ قطع بان كيك شيكولاته ٨٠</div>
+            <div class="menu-item">٤ قطع بان كيك شيكولاته + موز ١٠٠</div>
+            <div class="menu-item">كريب شيكولاته ٨٠</div>
+            <div class="menu-item">كريب شيكولاته + موز ١٠٠</div>
+            <div class="menu-item">تيراميسو ٨٠</div>
+            <div class="menu-item">تورته شيكولاته نوتيلا ٨٠</div>
+        </div>
+
+        <div class="pizza-section">
+            <div class="pizza-title">بيتزا مرجريتا</div>
+            <div class="pizza-sizes">
+                <div class="pizza-size">
+                    <div class="size-name">M</div>
+                    <div class="size-price">220</div>
+                    <div class="size-desc">فرد+1كانز+بطاطس</div>
+                </div>
+                <div class="pizza-size">
+                    <div class="size-name">L</div>
+                    <div class="size-price">280</div>
+                    <div class="size-desc">2فرد+2كانز</div>
+                </div>
+                <div class="pizza-size">
+                    <div class="size-name">XL</div>
+                    <div class="size-price">320</div>
+                    <div class="size-desc">2/3فرد+2كانز</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pizza-section">
+            <div class="pizza-title">بيتزا فراخ رانش</div>
+            <div class="pizza-sizes">
+                <div class="pizza-size">
+                    <div class="size-name">M</div>
+                    <div class="size-price">220</div>
+                    <div class="size-desc">فرد+1كانز+بطاطس</div>
+                </div>
+                <div class="pizza-size">
+                    <div class="size-name">L</div>
+                    <div class="size-price">290</div>
+                    <div class="size-desc">2فرد+2كانز</div>
+                </div>
+                <div class="pizza-size">
+                    <div class="size-name">XL</div>
+                    <div class="size-price">290</div>
+                    <div class="size-desc">2/3فرد+2كانز</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pizza-section">
+            <div class="pizza-title">4 تشيز</div>
+            <div class="pizza-sizes">
+                <div class="pizza-size">
+                    <div class="size-name">M</div>
+                    <div class="size-price">220</div>
+                    <div class="size-desc">فرد+1كانز+بطاطس</div>
+                </div>
+                <div class="pizza-size">
+                    <div class="size-name">L</div>
+                    <div class="size-price">290</div>
+                    <div class="size-desc">2فرد+2كانز</div>
+                </div>
+                <div class="pizza-size">
+                    <div class="size-name">XL</div>
+                    <div class="size-price">290</div>
+                    <div class="size-desc">2/3فرد+2كانز</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
