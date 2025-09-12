@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zain Dive in Hotel</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Tajawal', 'Arial', sans-serif;
             background-color: #f0f8ff;
             margin: 0;
             padding: 0;
@@ -16,28 +18,43 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            background-image: linear-gradient(to bottom, #e6f2ff, #f0f8ff);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="50%" y="50%" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="rgba(0, 102, 204, 0.05)" text-anchor="middle" dominant-baseline="middle" transform="rotate(-45)">Zain Dive Inn Zain Dive Inn Zain Dive Inn</text></svg>'), linear-gradient(to bottom, #e6f2ff, #f0f8ff);
+            background-size: 400px, cover;
+            position: relative;
         }
+        
         .container {
             background-color: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
             padding: 40px;
             max-width: 600px;
             width: 90%;
             border-top: 5px solid #0066cc;
+            position: relative;
+            z-index: 1;
         }
+        
         h1 {
             color: #0066cc;
             margin-bottom: 20px;
             font-size: 2.5rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
         }
+        
+        h2 {
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 30px;
+        }
+        
         .buttons {
             display: flex;
             justify-content: space-around;
             margin-top: 40px;
         }
+        
         .btn {
             background-color: #0066cc;
             color: white;
@@ -51,11 +68,13 @@
             font-weight: bold;
             box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
         }
+        
         .btn:hover {
             background-color: #004c99;
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0, 102, 204, 0.4);
         }
+        
         .logo {
             max-width: 150px;
             margin-bottom: 20px;
@@ -64,22 +83,82 @@
         .contact {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid rgba(0, 102, 204, 0.2);
             font-size: 1.1rem;
+            color: #0066cc;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #0066cc, transparent);
         }
         
         .contact h3 {
             color: #0066cc;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
         
         .contact p {
-            margin: 5px 0;
+            margin: 8px 0;
             font-weight: bold;
+        }
+        
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1rem;
+            color: rgba(0, 102, 204, 0.3);
+            font-weight: bold;
+            z-index: 0;
+        }
+        
+        @media print {
+            /* Basic print setup */
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+            
+            /* Hide non-printable elements */
+            .no-print, .navigation, .watermark {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+                width: 0 !important;
+                position: absolute !important;
+                overflow: hidden !important;
+                z-index: -9999 !important;
+            }
+            
+            /* Maintain styling while optimizing for print */
+            body {
+                background-color: #f0f8ff;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="50%" y="50%" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="rgba(0, 102, 204, 0.03)" text-anchor="middle" dominant-baseline="middle" transform="rotate(-45)">Zain Dive Inn Zain Dive Inn Zain Dive Inn</text></svg>');
+                background-size: 400px;
+            }
+            
+            .container {
+                box-shadow: 0 5px 15px rgba(0, 102, 204, 0.15);
+                border-top: 5px solid #0066cc;
+                background-color: white;
+                padding: 10mm;
+                max-width: none;
+                width: auto;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="watermark">Zain Dive Inn</div>
+    
     <div class="container">
         <h1>فندق زين دايف إن</h1>
         <h2>Zain Dive in Hotel</h2>
