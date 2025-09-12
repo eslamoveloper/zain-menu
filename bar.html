@@ -171,94 +171,30 @@
                 display: none;
             }
             
-            /* Reset all print styles */
+            /* Basic styling */
             body {
                 background: white;
                 margin: 0;
                 padding: 0;
                 font-family: 'Tajawal', 'Arial', sans-serif;
-                font-size: 12pt;
-                height: auto;
-                min-height: 0;
-                display: block;
             }
             
             .container {
-                background-color: white;
-                border-radius: 0;
-                box-shadow: none;
-                border-top: 2px solid #0066cc;
                 width: 100%;
                 max-width: 100%;
                 margin: 0;
                 padding: 5mm;
-                page-break-after: avoid;
-            }
-            
-            /* Compact layout for print */
-            .menu-section {
-                margin-bottom: 8mm;
-                padding: 0;
-                border-radius: 0;
-                background-color: white;
-                page-break-inside: avoid;
-            }
-            
-            .menu-section h2 {
-                color: #0066cc;
-                border-bottom: 1px solid #0066cc;
-                padding-bottom: 2mm;
-                margin-bottom: 3mm;
-                font-size: 14pt;
-                text-align: center;
-            }
-            
-            /* Optimize grid layout */
-            .menu-items {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2mm;
-            }
-            
-            .menu-item {
-                display: flex;
-                justify-content: space-between;
-                padding: 1mm 2mm;
-                font-size: 11pt;
-                border-bottom: 1px dotted #ccc;
-                margin-bottom: 1mm;
-                line-height: 1.2;
-            }
-            
-            .item-name {
-                font-weight: bold;
-            }
-            
-            .item-price {
-                color: #0066cc;
-                font-weight: bold;
-            }
-            
-            /* Page break control */
-            .page-break {
-                page-break-before: always;
-                height: 0;
-                margin: 0;
-                padding: 0;
-            }
-            
-            /* Remove all extra page breaks */
-            .first-page, .second-page {
-                page-break-after: auto;
-                page-break-before: auto;
+                box-shadow: none;
+                border: none;
+                background: white;
             }
             
             /* Header styling */
             .header {
                 text-align: center;
-                margin-bottom: 5mm;
+                margin-bottom: 3mm;
                 border-bottom: 1px solid #0066cc;
-                padding-bottom: 3mm;
+                padding-bottom: 1mm;
             }
             
             .header::after {
@@ -267,36 +203,89 @@
             
             h1 {
                 color: #0066cc;
-                margin-bottom: 2mm;
-                font-size: 16pt;
+                font-size: 24pt;
+                margin-bottom: 1mm;
+                margin-top: 0;
                 font-weight: bold;
             }
             
             h2 {
-                font-weight: bold;
                 color: #0066cc;
-                font-size: 12pt;
+                font-size: 18pt;
+                margin-bottom: 1mm;
                 margin-top: 0;
+                font-weight: bold;
+            }
+            
+            /* Menu section styling */
+            .menu-section {
+                margin-bottom: 6mm;
+                padding: 0;
+                background: none;
+                border-radius: 0;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                width: 100%;
+            }
+            
+            /* Two-column layout for menu items */
+            .menu-items {
+                column-count: 2;
+                column-gap: 3mm;
+                column-fill: balance;
+            }
+            
+            .menu-section h2 {
+                color: #0066cc;
+                border-bottom: 1px solid #0066cc;
+                padding-bottom: 1mm;
                 margin-bottom: 2mm;
+                font-size: 20pt;
+                text-align: center;
+                font-weight: bold;
             }
             
-            /* Fix for extra pages */
-            html, body {
-                height: auto !important;
-                overflow: visible !important;
+            /* Menu items styling */
+            .menu-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5mm 0;
+                border-bottom: 1px dotted #ccc;
+                margin-bottom: 1mm;
+                font-size: 16pt;
+                line-height: 1.1;
+                width: 100%;
+                break-inside: avoid;
+                page-break-inside: avoid;
             }
             
-            /* Ensure only 2 pages */
-            @page :first {
-                margin-bottom: 0;
+            .item-name {
+                font-weight: bold;
+                text-align: right;
+                padding-left: 0;
+                flex: 1;
             }
             
-            @page :left {
-                margin-bottom: 0;
+            .item-price {
+                color: #0066cc;
+                font-weight: 900;
+                min-width: 25px;
+                text-align: left;
+                padding-right: 0;
+                margin-right: 1mm;
+                margin-left: 2mm;
+                font-size: 16pt;
             }
             
-            @page :right {
-                margin-top: 0;
+            /* Force page break */
+            .page-break {
+                page-break-before: always;
+                height: 0;
+                margin: 0;
+                padding: 0;
+                clear: both;
+                display: block;
+                width: 100%;
             }
         }
     </style>
@@ -314,8 +303,6 @@
             <h2>فندق زين دايف إن</h2>
         </div>
         
-        <div class="first-page">
-
         <div class="menu-section">
             <h2>المشروبات</h2>
             <div class="menu-items">
@@ -436,25 +423,6 @@
             </div>
         </div>
 
-        <div class="menu-section">
-            <h2>مشروبات مميزة</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <span class="item-name">ميلك شيك</span>
-                    <span class="item-price">90</span>
-                </div>
-                <div class="menu-item">
-                    <span class="item-name">موخيتو</span>
-                    <span class="item-price">70</span>
-                </div>
-                <div class="menu-item">
-                    <span class="item-name">موخيتو ريدبول</span>
-                    <span class="item-price">90</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Strategic page break -->
         <div class="page-break"></div>
         
         <div class="menu-section">
