@@ -90,11 +90,40 @@
             border-radius: 8px;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            background-image: linear-gradient(to right, #0066cc 10%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
         }
         
         .menu-item:hover {
             background-color: rgba(0, 102, 204, 0.05);
             transform: translateX(5px);
+        }
+        
+        .item-name {
+            position: relative;
+            padding-left: 0;
+            padding-right: 5px;
+            flex: 1;
+            background-color: white;
+            z-index: 1;
+            font-weight: bold;
+        }
+        
+        .item-price {
+            color: #cc0000;
+            font-weight: bold;
+            padding-right: 4px;
+            padding-left: 6px;
+            background-color: white;
+            position: relative;
+            z-index: 1;
+            min-width: 40px;
+            text-align: left;
         }
         .pizza-section {
             margin: 10px 0;
@@ -195,47 +224,81 @@
             /* Hide non-printable elements */
             .no-print, .navigation, .watermark {
                 display: none !important;
-                visibility: hidden !important;
-                height: 0 !important;
-                width: 0 !important;
-                position: absolute !important;
-                overflow: hidden !important;
-                z-index: -9999 !important;
             }
             
-            /* Maintain styling while optimizing for print */
+            /* Basic styling */
             body {
-                background-color: #f0f8ff;
-                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="50%" y="50%" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="rgba(0, 102, 204, 0.03)" text-anchor="middle" dominant-baseline="middle" transform="rotate(-45)">Zain Dive Inn Zain Dive Inn Zain Dive Inn</text></svg>');
-                background-size: 400px;
+                background-color: white !important;
+                font-family: 'Tajawal', 'Arial', sans-serif !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
             
             .container {
-                box-shadow: 0 5px 15px rgba(0, 102, 204, 0.15);
-                border-top: 5px solid #0066cc;
-                background-color: white;
-                padding: 10mm;
-                max-width: none;
-                width: auto;
+                box-shadow: none !important;
+                border-top: 5px solid #0066cc !important;
+                background-color: white !important;
+                padding: 10mm !important;
+                max-width: none !important;
+                width: auto !important;
             }
             
-            /* Compact spacing for menu items */
+            /* Section styling */
             .menu-section {
-                margin-bottom: 10px;
-                padding: 5px;
-                page-break-inside: avoid;
+                margin-bottom: 10px !important;
+                padding: 5px !important;
+                page-break-inside: avoid !important;
+                background-color: white !important;
             }
             
             .menu-section h2 {
-                margin-bottom: 5px;
-                padding-bottom: 3px;
+                margin-bottom: 5px !important;
+                padding-bottom: 3px !important;
+                font-size: 16pt !important;
+                color: #0066cc !important;
+                border-bottom: 2px solid #0066cc !important;
+                text-align: center !important;
             }
             
+            /* TOC-style dotted leaders */
             .menu-item {
-                margin-bottom: 4px;
-                padding: 2px 10px;
-                line-height: 1.2;
+                overflow: hidden !important;
+                margin-bottom: 5px !important;
+                line-height: 1.2 !important;
+                font-size: 14pt !important;
+                position: relative !important;
             }
+            
+            .item-name {
+                float: right !important;
+                padding-left: 4px !important;
+                background: white !important;
+                font-weight: bold !important;
+                position: relative !important;
+                margin-left: 4px !important;
+                z-index: 1 !important;
+            }
+            
+            .item-price {
+                float: left !important;
+                padding-right: 4px !important;
+                background: white !important;
+                color: #cc0000 !important;
+                font-weight: bold !important;
+                position: relative !important;
+                z-index: 1 !important;
+            }
+            
+            .menu-item:before {
+                content: "" !important;
+                position: absolute !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0.6em !important;
+                border-bottom: 2px dotted #0066cc !important;
+            }
+            
+            
             
             /* Force page break before pizza sections */
             .page-break {
@@ -337,32 +400,86 @@
 
         <div class="menu-section">
             <h2>وجبات زين</h2>
-            <div class="menu-item">مكرونه وايت صوص بالفراخ و المشروم + فرايز ١٨٠</div>
-            <div class="menu-item">مكرونه اسباجتي بلونيز "ريد صوص" + فرايز ١٨٠</div>
-            <div class="menu-item">مكرونه اسباجتي نابلتان + فرايز ١٤٠</div>
-            <div class="menu-item">مكرونه بنا بالجمبري ( ريد او وايت صوص ) + فرايز ٢٥٠</div>
-            <div class="menu-item">ورك فراخ + ارز + سلطه + فرايز + عيش ١٥٠</div>
-            <div class="menu-item">صدر فراخ + ارز + سلطه + فرايز + عيش ١٧٠</div>
-            <div class="menu-item">نص فرخه + ارز + سلطه + فرايز + عيش ٢٩٠</div>
-            <div class="menu-item">فراخ بانيه + مكرونه بنا ريد صوص + فرايز ١٧٠</div>
-            <div class="menu-item">فراخ استربس + مكرونه بنا ريد صوص + فرايز ١٦٠</div>
-            <div class="menu-item">¼ كفته + ارز + سلطه + فرايز + عيش ٢٠٠</div>
-            <div class="menu-item">وجبه ميكس ( كفته + ¼ فرخه + ارز + سلطه + فرايز + عيش ) ٢٥٠</div>
+            <div class="menu-item">
+                <span class="item-name">مكرونه وايت صوص بالفراخ و المشروم + فرايز</span>
+                <span class="item-price">١٨٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">مكرونه اسباجتي بلونيز "ريد صوص" + فرايز</span>
+                <span class="item-price">١٨٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">مكرونه اسباجتي نابلتان + فرايز</span>
+                <span class="item-price">١٤٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">مكرونه بنا بالجمبري ( ريد او وايت صوص ) + فرايز</span>
+                <span class="item-price">٢٥٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">ورك فراخ + ارز + سلطه + فرايز + عيش</span>
+                <span class="item-price">١٥٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">صدر فراخ + ارز + سلطه + فرايز + عيش</span>
+                <span class="item-price">١٧٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">نص فرخه + ارز + سلطه + فرايز + عيش</span>
+                <span class="item-price">٢٩٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">فراخ بانيه + مكرونه بنا ريد صوص + فرايز</span>
+                <span class="item-price">١٧٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">فراخ استربس + مكرونه بنا ريد صوص + فرايز</span>
+                <span class="item-price">١٦٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">¼ كفته + ارز + سلطه + فرايز + عيش</span>
+                <span class="item-price">٢٠٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">وجبه ميكس ( كفته + ¼ فرخه + ارز + سلطه + فرايز + عيش )</span>
+                <span class="item-price">٢٥٠</span>
+            </div>
         </div>
 
         <div class="menu-section">
             <h2>سندوتشات رول</h2>
-            <div class="menu-item">استربس + فرايز ١٢٠</div>
-            <div class="menu-item">بانيه + فرايز ١٢٠</div>
-            <div class="menu-item">فاهيتا + فرايز ١٢٠</div>
-            <div class="menu-item">كفته + فرايز ١٤٠</div>
+            <div class="menu-item">
+                <span class="item-name">استربس + فرايز</span>
+                <span class="item-price">١٢٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">بانيه + فرايز</span>
+                <span class="item-price">١٢٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">فاهيتا + فرايز</span>
+                <span class="item-price">١٢٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">كفته + فرايز</span>
+                <span class="item-price">١٤٠</span>
+            </div>
         </div>
 
         <div class="menu-section">
             <h2>الحلو</h2>
-            <div class="menu-item">4 قطع بان كيك شيكولاته  ٨٠</div>
-            <div class="menu-item">تيراميسو ٨٠</div>
-            <div class="menu-item">تورته شيكولاته ٨٠</div>
+            <div class="menu-item">
+                <span class="item-name">4 قطع بان كيك شيكولاته</span>
+                <span class="item-price">٨٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">تيراميسو</span>
+                <span class="item-price">٨٠</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">تورته شيكولاته</span>
+                <span class="item-price">٨٠</span>
+            </div>
         </div>
 
         <!-- No page break needed as dessert section will naturally flow to second page -->
